@@ -106,7 +106,7 @@ You can modify those options when running runtests.py::
 Our set up is too tedious (get and cmmi unaccent, make the database) to match this goal.
 
 
-The requirements are::
+The requirements are:
 
 * The django_unaccent_table exists and has the the unaccent sql function available (see Database set up section)
 * The user who will the run test  must have the right to create database (needed by Django test mechanism)
