@@ -22,5 +22,5 @@ install:
 before_script:
     - createdb -T template1 django_unaccent_db
 
-script: python runtests.py -d django_unaccent_db -u postgres -p ' '
+script: python runtests.py -d django_unaccent_db -u postgres -p ''
 

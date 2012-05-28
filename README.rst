@@ -1,6 +1,10 @@
 Django-Unaccent
 =================
 
+.. image:: https://secure.travis-ci.org/djcoin/django-unaccent.png?branch=master
+    :target: http://travis-ci.org/djcoin/django-unaccent/
+
+
 Add unaccent search to the Django ORM like a breeze !
 This currently only works for the *Postgres database* but contribution are welcome
 to push it to other databases or to extend its features !
@@ -56,7 +60,7 @@ We did not investigate this yet. What matters however is that your database can 
 when the *unaccent* function is triggered in SQL (eg: select * from mytable where mycolumn = unaccent('Tchüs');).
 
 This was tested with the 8.4 version of PostgreSQL on a debian-like distribution.
-Install the ``unaccent`` extension::
+Install the ``unaccent`` extension (see the .travis.yml file for the setup script)::
 
     $ apt-get install postgresql-server-dev-8.4 libunac1 libunac1-dev
     $ cd /tmp
@@ -67,7 +71,7 @@ Install the ``unaccent`` extension::
 
 The extension is now installed and can be added to any existing bases or templates::
 
-    $ psql -d template1 -f /usr/share/postgresql/8.4/contrib/unaccent.sql
+    $ psql -d template1 -f $(pg_config --sharedir)/contrib/unaccent.sql
 
 Quick test::
 
@@ -87,9 +91,9 @@ Database default Django's options are::
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django_unaccent_table',
+        'NAME': 'django_unaccent_db',
         'USER': 'django_unaccent_user',
-        'PASSWORD': 'django_unaccent_password',
+        'PASSWORD': '',
         'HOST': '',
     }
 

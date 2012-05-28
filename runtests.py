@@ -14,7 +14,7 @@ DbConnectionInfo = namedtuple('DbConnectionInfo', ['name', 'user', 'password', '
 default_db_connection_info = DbConnectionInfo(
   name='django_unaccent_db',
   user='django_unaccent_user',
-  password='django_unaccent_password',
+  password='',
   host='',
 )
 
