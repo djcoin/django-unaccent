@@ -85,7 +85,7 @@ Testing
 Tests are provided in the tests.py file.
 To test the library, get the sources and run::
 
-    $ python setup.py test
+    $ python runtests.py
 
 Database default Django's options are::
 
@@ -100,6 +100,10 @@ Database default Django's options are::
 You can modify those options when running runtests.py::
 
     python runtests.py -d my_db -u my_user -p my_password
+
+
+**Note**: *python setup.py test* is not provided as it should be used for immediate test after install.
+Our set up is too tedious (get and cmmi unaccent, make the database) to match this goal.
 
 
 The requirements are::
