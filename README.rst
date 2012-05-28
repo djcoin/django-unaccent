@@ -83,11 +83,7 @@ Testing
 =======
 
 Tests are provided in the tests.py file.
-To test the library, get the sources and run::
-
-    $ python setup.py test
-
-Database default Django's options are::
+They will be run using those default database options::
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -97,9 +93,29 @@ Database default Django's options are::
         'HOST': '',
     }
 
-You can modify those options when running runtests.py::
+You may change those parameters in a way or another depending
+on the script you run for tests
 
-    python runtests.py -d my_db -u my_user -p my_password
+
+To test the library, get the sources and run either::
+
+    $ python setup.py test
+
+or::
+
+    $ python runtests.py
+
+The difference between the two is that the later accept POSIX flags
+whereas the other one look at environment variables.
+
+The first command is supposed to be an for "intall test" and there is no way
+to pass arguments to it (they get interpreted as flags for setup.py).
+
+
+Example of tweaking the defaults in both scripts::
+
+    $ DJANGO_UNACCENT_USER=my_user DJANGO_UNACCENT_DB=my_db DJANGO_UNACCENT_PASSWORD= python setup.py test
+    $ python runtests.py -d my_db -u my_user -p my_password
 
 
 The requirements are::

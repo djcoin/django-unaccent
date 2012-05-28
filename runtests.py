@@ -48,6 +48,22 @@ def set_settings_and_runtests(db_connection_info, verbosity=1, interactive=False
     sys.exit(return_code)
 
 
+def run():
+    """Use environment to set up database connection info"""
+
+    opt_db_info = default_db_connection_info
+    osget = os.environ.get
+
+    db_info = DbConnectionInfo(
+        osget('DJANGO_UNACCENT_DB', opt_db_info.name),
+        osget('DJANGO_UNACCENT_USER', opt_db_info.user),
+        osget('DJANGO_UNACCENT_PASSWORD', opt_db_info.password),
+        osget('DJANGO_UNACCENT_HOST', opt_db_info.host),
+    )
+
+    set_settings_and_runtests(db_info)
+
+
 
 if __name__ == '__main__':
     opt_db_info = default_db_connection_info
