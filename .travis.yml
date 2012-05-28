@@ -1,0 +1,26 @@
+language: python
+python:
+  - 2.6
+
+
+# set up postgres unaccent
+before_install:
+  - pushd .
+  - sudo apt-get install postgresql-server-dev-8.4 libunac1 libunac1-dev
+  - cd /tmp
+  - wget "http://launchpad.net/postgresql-unaccent/trunk/0.1/+download/postgresql-unaccent-0.1.tar.gz"
+  - tar -zxvf postgresql-unaccent-0.1.tar.gz
+  - cd postgresql-unaccent-0.1
+  - make && sudo make install
+  - psql -d template1 -f $(pg_config --sharedir)/contrib/unaccent.sql
+  - popd
+
+
+install:
+  - pip install . --use-mirrors
+
+before_script:
+    - createdb -T template1 django_unaccent_db
+
+script: python runtests.py -d django_unaccent_db -u postgres -p ' '
+
