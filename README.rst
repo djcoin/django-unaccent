@@ -16,16 +16,16 @@ Operator's list
 This library add new operators to the django ORM by a clean (!) monkey patch.
 These operator's name share the same name as the existing operators provided by
 the Django ORM, only suffixed by '_unaccent'.
-Here is the exhaustive list of new operators available::
+Here is the exhaustive list of new operators available:
 
-    - *unaccent*: unaccented search
-    - *iunaccent*: unaccented case insensitive search
-    - *contains_unaccent*: unaccented contains
-    - *icontains_unaccent*: unaccented case insensitive contains
-    - *startswith_unaccent*: unaccented prefix search
-    - *istartswith_unaccent*:  unaccented case insensitive prefix search
-    - *endswith_unaccent*: unaccented suffix search
-    - *iendswith_unaccent*: unaccented case insensitive suffix search
+- *unaccent*: unaccented search
+- *iunaccent*: unaccented case insensitive search
+- *contains_unaccent*: unaccented contains
+- *icontains_unaccent*: unaccented case insensitive contains
+- *startswith_unaccent*: unaccented prefix search
+- *istartswith_unaccent*:  unaccented case insensitive prefix search
+- *endswith_unaccent*: unaccented suffix search
+- *iendswith_unaccent*: unaccented case insensitive suffix search
 
 
 To this list we can add the "smart" version of each of those operators,
