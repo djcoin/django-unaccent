@@ -20,7 +20,7 @@ setup(
         packages = ['django_unaccent'],
         long_description=read('README.rst'),
         install_requires = [
-            'django>=1.1,<1.4',
+            'django',
             # https://code.djangoproject.com/ticket/16250
             'psycopg2<=2.4.1',
         ],
