@@ -1,6 +1,10 @@
 Django-Unaccent
 =================
 
+
+.. Warning::
+   Django 1.5 and further are not yet supported, patch/contributors are welcome !
+
 .. image:: https://secure.travis-ci.org/djcoin/django-unaccent.png?branch=master
     :target: http://travis-ci.org/djcoin/django-unaccent/
 
@@ -48,6 +52,16 @@ Example
     <User: Ôtâèkù>
 
 Check out the tests for even more examples !
+
+Application set up
+==================
+
+
+To add new operators to the Django's ORM, we need to monkey patch it::
+
+    from django_unaccent.unaccent import monkey_patch_where_node
+    monkey_patch_where_node()
+
 
 Database set up for unaccented search
 =====================================
