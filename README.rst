@@ -1,6 +1,8 @@
+Note: this project is now obsolete, as Django 1.8 and above include `unaccent` functionality by default using `django.contrib.postgres`.
+See https://docs.djangoproject.com/en/1.8/ref/contrib/postgres/lookups/.
+
 Django-Unaccent
 =================
-
 
 .. Warning::
    Django 1.5 and further are not yet supported, patch/contributors are welcome !
